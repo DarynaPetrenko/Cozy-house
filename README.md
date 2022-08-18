@@ -1,0 +1,2 @@
+# Cozy-house
+SCSS
