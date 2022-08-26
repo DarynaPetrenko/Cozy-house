@@ -1,0 +1,68 @@
+@mixin bg-image($path: '', $size: cover, $repeat: no-repeat, $pos: center){
+    background-image: url($path);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $pos;
+}
+
+@mixin flex($type: 'all'){
+    display: flex;
+
+    @if $type== 'all'{
+        justify-content: space-between;
+        align-items: center;
+}@else if $type== 'hor' {
+        justify-content: space-between;
+}@else if $type=='ver' {
+    align-items: center;
+}@else if $type=='center' {
+    justify-content: center;
+        align-items: center;
+}@else if $type=='hor-center' {
+    justify-content: center;
+}
+}
+
+@mixin pseudo($display: block, $content: ''){
+    display: $display;
+    content: $content;
+}
+
+@mixin generate-pseudo-icons($baseclass, $list, $path, $ext) {
+    @each $icon in $list {
+        #{$baseclass}#{$icon}::before {
+            background-image: url(#{$path}#{$icon}.#{$ext});
+            @include pseudo();
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+@mixin section($padding-top, $padding-bottom){
+    padding-top: $padding-top;
+    padding-bottom: $padding-bottom;
+}
+
+@mixin inline-block($display: inline-block, $vertical-align: middle){
+    display: $display;
+    vertical-align: $vertical-align;
+}
+
+@mixin text-style($font-family: $primary-font-stack, 
+$font-size: $primary-font-size, 
+$font-weight: $primary-font-weight, 
+$color: $primary-color,
+$line-height: $primary-line-height){
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}

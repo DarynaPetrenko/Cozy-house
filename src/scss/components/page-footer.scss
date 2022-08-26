@@ -1,0 +1,98 @@
+.page-footer{
+    @include bg-image($path: '../img/bg/footer-bg.png');
+    min-height: 360px;
+    @include section(74px, 78px);
+    @media(max-width: 1050px){
+        background: #292929;
+    }
+    @media(max-width: 799px){
+        text-align: center;
+    }
+}
+
+
+.page-footer__contacts{
+    display: flex;
+    @media(max-width: 799px){
+        flex-direction: column;
+        align-items: center;
+    }
+    @media(max-width: 499px){
+        width: 300px;
+    }
+    @media(min-width: 500px) and (max-width: 799px){
+        width: 480px;
+    }
+    @media(min-width: 800px) and (max-width: 999px){
+        justify-content: center;
+    }
+}
+
+.page-footer__title, .foo__icon span{
+    width: 300px;
+    @media(max-width: 799px){
+        margin: 0 auto;
+    }
+}
+.page-footer__title{
+    @extend %title;
+    color: $secondary-text-color;
+    margin-bottom: 40px;
+}
+.page-footer__questions{
+    margin-right: 130px;
+    @media(max-width: 999px){
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    @media(min-width: 1050px) and (max-width: 1199px){
+        margin-right: 20px;
+    }
+}
+
+.page-footer__questions-contacts{
+    @extend %link;
+    display: block;
+}
+
+
+.page-footer__address-block{
+    @include flex($type: 'hor');
+    flex-direction: column;
+    height: 104px;
+    @media(max-width: 499px){
+        width: 250px;
+        margin: 0 auto;
+    }
+}
+
+@include generate-pseudo-icons('.foo__icon--', $address-icons, '../img/address-icons/icon-', 'png');
+
+ .foo__icon{
+    @include text-style($requisites-font-stack, 20px, $primary-font-weight, $secondary-color,  $primary-line-height);
+    @extend %text;
+    letter-spacing: $primary-letter-spacing;
+
+    @media(max-width: 499px){
+        font-size: 16px;
+    }
+    @media(min-width: 500px) and (max-width: 799px){
+        font-size: 18px;
+    }
+    @include flex($type: 'ver');
+
+    &::before{
+        @include size(36px, 36px);
+        margin-right: 16px;
+        flex-shrink: 0;
+        @media(max-width: 499px){
+            @include size(30px, 30px);
+        }
+        @media(max-width: 799px){
+            margin-right: 0;
+        }
+        @media(min-width: 500px) and (max-width: 799px){
+            @include size(32px, 32px);
+        }
+    }
+ }

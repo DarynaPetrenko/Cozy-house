@@ -1,0 +1,25 @@
+{
+  "name": "cozy-house",
+  "version": "1.0.0",
+  "description": "scss",
+  "main": "index.js",
+  "scripts": {
+    "scss:build": "node-sass src/scss/style.scss -o src/css",
+    "scss:watch": "node-sass --watch src/scss/style.scss -o src/css",
+    "build": "npm run scss:build && npm run scss:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarynaPetrenko/Cozy-house.git"
+  },
+  "author": "Daryna Petrenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarynaPetrenko/Cozy-house/issues"
+  },
+  "homepage": "https://github.com/DarynaPetrenko/Cozy-house#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "devDependencies": {}
+}

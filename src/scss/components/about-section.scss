@@ -1,0 +1,59 @@
+.about-section{
+    @include section(76px, 98px);
+    color: $primary-dark-color;
+    background-color: $light-bg-color;
+    @media(max-width: 1199px){
+        text-align: center;
+    }
+}
+
+.about-section__title{
+    @extend %title;
+    width: 350px;
+    margin-bottom: 28px;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+    @media(min-width: 500px) and (max-width: 799px){
+        width: 480px;
+    }
+}
+
+.about-section__text{
+    width: 430px;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+    @media(max-width: 999px){
+        margin: 0 auto;
+    }
+}
+
+.about-section__text-block{
+    @include inline-block();
+}
+
+.about{
+    width: 850px;
+    margin: 0 auto;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+    @media(min-width: 500px) and (max-width: 799px){
+        width: 480px;
+    }
+}
+
+.about::before{
+    @include pseudo($display: inline-block);
+    @include size(300px, 408px);
+    @include bg-image($path: '../img/Pets.png');
+    @include inline-block();
+    margin-right: 114px;
+    @media(max-width: 999px){
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+
+    }
+}

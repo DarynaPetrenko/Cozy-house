@@ -1,0 +1,101 @@
+.our-pets-section{
+    background-color: $dark-bg-color;
+    @include section(76px, 88px);
+    text-align: center;
+}
+
+.our-pets-section__title{
+    @extend %title;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.our-pets-section__slider-cards{
+    @extend %list;
+    @include flex($type: 'hor-center');
+    @media(max-width: 999px){
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.our-pets-section__slider-card{
+    width: 270px;
+    background-color: $light-bg-color;
+    padding-bottom: 34px;
+    text-align: center;
+    transition: transform, 0.2s ease-out;
+    &:not(:last-child){
+        margin-right: 50px;
+    }
+    &:hover,
+    &:focus{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    @media(max-width: 999px){
+        &:not(:last-child){
+            margin-right: 0;
+        }
+        &:not(:last-child){
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.our-pets-section__slider-name{
+    text-align: center;
+    @include text-style($secondary-font-stack, 20px, $primary-font-weight, $primary-title-color, $primary-line-height);
+    letter-spacing: $primary-letter-spacing;
+    margin-bottom: 20px;
+}
+
+.our-pets-section__btn{
+    @extend %pets-btn;
+}
+
+.our-pets-section__slider{
+    position: relative;
+    margin-bottom: 64px;
+    @media(min-width: 1000px) and (max-width: 1199px){
+        margin-bottom: 90px;
+    }
+}
+
+.our-pets-section__slider-btn{
+    @extend %base-btn;
+    background-color: $dark-bg-color;
+    position: absolute;
+    top: 50%;
+    transform: scale(1) translateY(-50%);
+    transition: transform, 0.2s ease-out;
+    &:hover,
+    &:focus{
+        transform: scale(1.05) translateY(-50%);
+    }
+
+    @media(max-width: 999px){
+        display: none;
+    }
+    @media(min-width: 1000px) and (max-width: 1199px){
+        top: 110%;
+    }
+}
+
+.our-pets-section__slider--back{
+    left: 0;
+    @media(min-width: 1000px) and (max-width: 1199px){
+        left: 42%;
+    }
+}
+
+.our-pets-section__slider--forward{
+    right: 0;
+    @media(min-width: 1000px) and (max-width: 1199px){
+        right: 42%;
+    }
+}
+
+.our-pets-section__button{
+    @extend %button;
+}

@@ -1,0 +1,102 @@
+.page-header{
+    @include bg-image($path: '../img/bg/header-bg.png');
+    min-height: 925px;
+    @include section(60px, 268px);
+    @media(max-width: 799px){
+        background: #292929;
+    }
+    @media(max-width: 799px){
+        text-align: center;
+    }
+}
+
+.site-logo{
+    @extend %link;
+    width: 193px;
+}
+
+.site-logo__title{
+    @extend %text;
+    @include text-style($secondary-font-stack, 32px, $primary-font-weight, $secondary-color, $primary-line-height);
+    letter-spacing: 2.651px;
+    margin-bottom: 10px;
+}
+
+.site-logo__desc{
+    @extend %link;
+    @extend %text;
+    @include text-style($font-size: 13px, $color: $secondary-text-color);
+    letter-spacing: 1.78px;
+}
+
+.page-nav{
+    @include flex();
+    margin-bottom: 246px;
+    @media(max-width: 799px){
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
+}
+
+.page-nav__site-navigation{
+    @extend %list;
+    @include flex($type: 'hor');
+    flex-wrap: wrap;
+    width: 470px;
+    @media(max-width: 499px){
+        width: 250px;
+        }
+        @media(max-width: 799px){
+            margin-top: 50px;
+        }
+}
+.site-navigation__item{
+    @media(max-width: 499px){
+        &:not(:nth-last-child(-n+2)){
+            margin-bottom: 20px;
+        }
+    }
+}
+.site-navigation__link{
+    @extend %link;
+    color: $primary-color;
+    position: relative;
+}
+.site-navigation__link::after{
+        @include pseudo();
+        @include size(100%, 3px);
+        background-color: $secondary-color;
+        position: absolute;
+        opacity: 0;
+        transition: opacity, 0.2s ease-in;
+}
+.site-navigation__item .site-navigation__link:hover::after,
+.site-navigation__item .site-navigation__link:focus::after{
+    opacity: 1;
+}
+.page-header__title{
+    @extend %text;
+    @include text-style($secondary-font-stack, 44px, $primary-font-weight, $secondary-text-color, 57px);
+    width: 350px;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+    @media(min-width: 500px) and (max-width: 799px){
+        width: 480px;
+    }
+}
+
+.page-header__text{
+    @extend %text;
+    width: 450px;
+    margin-bottom: 36px;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+}
+
+.page-header__button{
+    @extend %button;
+}

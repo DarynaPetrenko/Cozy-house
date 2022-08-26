@@ -1,0 +1,81 @@
+.donation-section{
+    @include section(60px, 78px);
+    background-color: $dark-bg-color;
+    @media(max-width: 1199px){
+        text-align: center;
+    }
+}
+
+.donation-section__title{
+    @extend %title;
+    margin-bottom: 28px;
+}
+
+.donation-section__text-block{
+    width: 350px;
+    @include inline-block();
+    @media(max-width: 499px){
+        width: 300px;
+    }
+}
+
+.donation::before{
+    @include pseudo($display: inline-block);
+    @include size(505px, 261px);
+    @include bg-image($path: '../img/Dog.png');
+    @include inline-block();
+    margin-right: 54px;
+    @media(max-width: 1199px){
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        @include size(290px, 140px);
+    }
+}
+
+.requisites__bank-name{
+    @include text-style($secondary-font-stack, $primary-font-size, $primary-font-weight, $primary-title-color, $primary-line-height);
+    letter-spacing: $primary-letter-spacing;
+    @extend %text;
+    margin-bottom: 10px;
+}
+
+.requisites{
+    width: 332px;
+    margin-bottom: 30px;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+}
+
+.requisites__card-num{
+    @include text-style($requisites-font-stack, 20px, $primary-font-weight, #292929, $primary-line-height);
+    @extend %text;
+    letter-spacing: $primary-letter-spacing;
+    @include inline-block();
+    padding: 18px 14px;
+    border-radius: 14px;
+    background-color: $secondary-color;
+    &:before{
+        @include pseudo($display: inline-block);
+        @include size(30px, 24px);
+        @include bg-image($path: '../img/credit-card.png');
+        @include inline-block();
+        margin-right: 14px;
+        @media(max-width: 499px){
+            @include size(25px, 18px);
+        }
+    }
+}
+.requisites__card-num span{
+    @include inline-block();
+    @media(max-width: 499px){
+        font-size: 16px;
+    }
+}
+
+.donation-section__rights{
+    @extend %text;
+    @include text-style($primary-font-stack, 12px, $primary-font-weight, #b2b2b2, 18px);
+    font-style: italic;
+}

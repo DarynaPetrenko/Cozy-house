@@ -1,0 +1,80 @@
+.help-section{
+    @include section(88px, 80px);
+    background-color: $light-bg-color;
+    text-align: center;
+}
+
+.help-section__title{
+    @extend %title;
+    width: 324px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    @media(max-width: 499px){
+        width: 300px;
+    }
+}
+
+.help-section__list{
+    @extend %list;
+    @include flex($type: 'hor-center');
+    flex-wrap: wrap;
+    width: 1050px;
+    margin: 0 auto;
+    @media(max-width: 499px){
+        width: 300px;
+        flex-direction: column;
+    }
+    @media(min-width: 500px) and (max-width: 799px){
+        width: 480px;
+        justify-content: space-between;
+    }
+    @media(min-width: 800px) and (max-width: 1199px){
+        width: 780px;
+        justify-content: space-between;
+    }
+    
+}
+
+.help-section__item{
+    @include text-style($secondary-font-stack, 20px, $primary-font-weight, $primary-title-color, $primary-line-height);
+    letter-spacing: $primary-letter-spacing;
+    &:not(:nth-child(4n+5)){
+        margin-right: 112px;
+    }
+    &:not(:nth-last-child(-n+4)){
+        margin-bottom: 68px;
+    }
+    @media(max-width: 499px){
+        &:not(:nth-child(4n+5)){
+            margin-right: 0;
+        }
+        &:not(:last-child){
+            margin-bottom: 40px;
+        }
+    }
+        @media(min-width: 500px) and (max-width: 799px){
+            &:not(:nth-child(4n+5)){
+                margin-right: 0;
+            }
+            &:not(:nth-child(3n+3)){
+                margin-right: 30px;
+            }
+        }
+        @media(min-width: 800px) and (max-width: 1199px){
+            &:not(:nth-child(4n+5)){
+                margin-right: 0;
+            }
+            &:not(:nth-child(3n+3)){
+                margin-right: 112px;
+            }
+        }
+    }
+
+ @include generate-pseudo-icons('.help__icon--', $icons, '../img/icons/icon-', 'png');
+
+ .help__icon{
+    &::before{
+        height: 60px;
+        margin-bottom: 24px;
+    }
+ }
